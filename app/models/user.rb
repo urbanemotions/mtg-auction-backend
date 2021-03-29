@@ -4,5 +4,4 @@ class User < ApplicationRecord
 
     validates :name, length: {minimum: 2}
     validates :username, length: {minimum: 2}
-
 end
