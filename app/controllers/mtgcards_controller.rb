@@ -1,0 +1,2 @@
+class MtgcardsController < ApplicationController
+end
