@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-    # def index - dont need?
-    #     users = User.all 
-    #     render json: users
-    # end
-
     #signup
     def create
         user = User.find_or_create_by(name: params[:name], username: params[:username])
