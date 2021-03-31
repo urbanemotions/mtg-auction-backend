@@ -2,6 +2,7 @@ class AuctionbidsController < ApplicationController
 
     #CRUD-READ
     #show all the bids with the username under each mtg card
+    #http://127.0.0.1:3000/auctionbids
     def index
         auctionbids = Auctionbid.all
         render json: auctionbids, include: [:users]

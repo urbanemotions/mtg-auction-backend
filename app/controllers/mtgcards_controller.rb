@@ -1,9 +1,11 @@
 class MtgcardsController < ApplicationController
 
     #show all the mtg cards available for auction
+    #http://127.0.0.1:3000/mtgcards
     def index
         mtgcards = Mtgcard.all
-        render json: mtgcards, include: [:bids]
+        render json: mtgcards
+        # , include: [:bids]
     end
 
     #show all the mtg cards on the right hand side of the page 
