@@ -5,7 +5,7 @@ class AuctionbidsController < ApplicationController
     #http://127.0.0.1:3000/auctionbids
     def index
         auctionbids = Auctionbid.all
-        render json: auctionbids, include: [:users]
+        render json: auctionbids
     end
 
     #CRUD-READ

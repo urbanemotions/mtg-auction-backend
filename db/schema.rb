@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 2021_03_29_221329) do
   create_table "auctionbids", force: :cascade do |t|
     t.float "bid"
     t.integer "user_id", null: false
-    t.integer "mtg_id", null: false
+    t.integer "mtgcard_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["mtg_id"], name: "index_auctionbids_on_mtg_id"
+    t.index ["mtgcard_id"], name: "index_auctionbids_on_mtgcard_id"
     t.index ["user_id"], name: "index_auctionbids_on_user_id"
   end
 
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 2021_03_29_221329) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "auctionbids", "mtgs"
+  add_foreign_key "auctionbids", "mtgcards"
   add_foreign_key "auctionbids", "users"
 end
