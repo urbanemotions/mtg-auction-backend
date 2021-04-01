@@ -17,9 +17,13 @@ class UsersController < ApplicationController
     end
 
     #login
-    def show
-        user = User.find(params[:id], name: params[:name], username: params[:username])
-        render json: user
+    def login
+        user = User.find_by(username: params[:username])
+        if user && user.name == params[:name]
+            render json: user
+        else 
+            render json: {error: 'User Was Not Found'}
+        end
     end
 
 end
